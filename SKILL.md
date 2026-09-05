@@ -1,6 +1,6 @@
 ---
 name: sketch-to-drawio
-description: 把位图草图（GPT/AI 生成或手绘扫描的论文框架图、方法图、流程图草稿）重绘为原生可编辑的 draw.io 学术矢量图，含开源图标检索、草图图标描摹清晰化、归属与质量台账。Use when the user has a raster draft/sketch image to rebuild as an editable vector figure. 从零画图、无草图时不要用本 skill（路由给 drawio-skill）。
+description: 把位图草图（GPT/AI 生成或手绘扫描的论文框架图、方法图、流程图草稿）重绘为原生可编辑的 draw.io 学术矢量图，含开源图标检索、草图图标描摹、复杂插画裁剪高清化、归属与质量台账。Use when the user provides a raster draft/sketch (PNG/JPG of a framework diagram, method overview, or pipeline figure) to rebuild as an editable vector figure. 无草图、从零绘图时不要用本 skill（路由给 drawio-skill）。
 ---
 
 # Sketch to Drawio
