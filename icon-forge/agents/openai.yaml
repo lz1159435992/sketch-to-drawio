@@ -1,0 +1,3 @@
+interface:
+  display_name: "Icon Forge"
+  short_description: "Select or generate matching SVG icons from text descriptions for figures and documents"

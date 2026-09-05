@@ -1,6 +1,6 @@
 ---
 name: sketch-to-drawio
-description: 把位图草图（GPT/AI 生成或手绘扫描的论文框架图、方法图、流程图草稿）重绘为原生可编辑的 draw.io 学术矢量图，含开源图标检索、草图图标描摹、复杂插画裁剪高清化、归属与质量台账。Use when the user provides a raster draft/sketch (PNG/JPG of a framework diagram, method overview, or pipeline figure) to rebuild as an editable vector figure. 无草图、从零绘图时不要用本 skill（路由给 drawio-skill）。
+description: 把位图草图（GPT/AI 生成或手绘扫描的论文框架图、方法图、流程图草稿）重绘为原生可编辑的 draw.io 学术矢量图，含开源图标检索、草图图标描摹、复杂插画裁剪高清化、归属与质量台账。Use when the user provides a raster draft/sketch (PNG/JPG of a framework diagram, method overview, or pipeline figure) to rebuild as an editable vector figure. 无草图、从零绘图时不要用本 skill（整图路由给 drawio-skill；按文字描述选配/生成图标路由给 icon-forge）。
 ---
 
 # Sketch to Drawio
@@ -65,3 +65,5 @@ description: 把位图草图（GPT/AI 生成或手绘扫描的论文框架图、
 ## 与其他 skill 的关系
 
 draw.io XML 语法、形状检索、导出 CLI 机制与故障排查复用 **drawio-skill**（headless 导出用 `xvfb-run -a drawio --no-sandbox ...`；其 troubleshooting 覆盖 root/无显示等情形），本 skill 不重复这些机制。
+
+无草图、按文字描述为元素选配或生成图标时路由给 **icon-forge**；其 A/B 路径复用本 skill 的 `references/icon-sourcing.md` 与 `scripts/fetch_icon.py`，C 路径（AI 生成）复用 `references/illustrations.md` 的风格硬约束与 `scripts/remap_svg_colors.py`。

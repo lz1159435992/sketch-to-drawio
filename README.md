@@ -105,6 +105,23 @@ building draw.io figures from scratch (no sketch), route to a general
 drawio-authoring skill instead — this skill deliberately reuses, and does not
 duplicate, draw.io XML/CLI mechanics.
 
+## Companion skill: icon-forge
+
+[`icon-forge/`](icon-forge/) is a sibling skill for the **no-sketch** case:
+given a text description of a module or element, it selects or generates a
+matching SVG icon — **A** semantic parsing + open-source lookup (reuses this
+repo's `references/icon-sourcing.md` and `scripts/fetch_icon.py`) → **B**
+same-set two-element composites → **C** AI generation as a last resort
+(bitmap → vtracer vectorization → palette remapping via
+`scripts/remap_svg_colors.py`, one revision max) → **D** conservative generic
+shapes. The same style-consistency hard constraints and anti-fabrication
+guardrails apply, and every icon ships with an attribution row and QC
+confidence record. Install it the same way:
+
+```bash
+cp -r sketch-to-drawio/icon-forge ~/.codex/skills/   # or ~/.claude/skills/
+```
+
 ## License
 
 MIT (see [LICENSE](LICENSE)). Third-party icons fetched through the scripts
@@ -137,3 +154,14 @@ attribution, which the attribution ledger will flag as a
 Python 3 + Pillow（脚本必需）、ImageMagick 与 vtracer/Inkscape（可选，
 描摹路径使用）。许可证：MIT；第三方图标保留其自身许可证（如 Lucide 为
 ISC），CC-BY 类集合需要署名，attribution 台账会自动标记提醒。
+
+### 姊妹 skill：icon-forge
+
+[`icon-forge/`](icon-forge/) 处理**无草图**场景：按文字描述为模块/元素
+选配或生成 SVG 图标——A 语义解析+开源检索（复用本仓库
+`references/icon-sourcing.md` 与 `scripts/fetch_icon.py`）→ B 同集双元素
+组合 → C AI 生成（最后手段：位图→vtracer 矢量化→
+`scripts/remap_svg_colors.py` 色板映射，最多修订一轮）→ D 保底通用形状。
+同样的风格一致性硬约束与防虚构护栏，每个图标都带 attribution 行与 QC
+置信度记录。安装方式相同：`cp -r sketch-to-drawio/icon-forge
+~/.codex/skills/`。
